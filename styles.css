@@ -1,0 +1,124 @@
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-border: #e9edf2;
+  --text-strong: #111111;
+  --text-soft: #6b7280;
+  --shadow: 0 12px 36px rgba(17, 24, 39, 0.08);
+  --play-start: #34a853;
+  --play-end: #188038;
+  --apple-start: #16181d;
+  --apple-end: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  color: var(--text-strong);
+  background: var(--bg);
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.download-card {
+  width: min(100%, 460px);
+  text-align: center;
+  padding: 28px 24px 24px;
+  border: 1px solid var(--surface-border);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.app-icon {
+  width: 112px;
+  height: 112px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.1);
+}
+
+h1 {
+  margin: 18px 0 8px;
+  font-size: clamp(2rem, 5vw, 2.4rem);
+  line-height: 1.08;
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 34ch;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.store-links {
+  display: grid;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.store-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 74px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+.store-button:hover,
+.store-button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.18);
+}
+
+.store-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.84;
+}
+
+.store-name {
+  margin-top: 2px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.play-store {
+  background: linear-gradient(135deg, var(--play-start), var(--play-end));
+}
+
+.app-store {
+  background: linear-gradient(135deg, var(--apple-start), var(--apple-end));
+}
+
+@media (min-width: 640px) {
+  .download-card {
+    padding: 34px 32px 28px;
+  }
+
+  .store-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
